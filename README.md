@@ -1,6 +1,6 @@
 # Workoutly - a simple app for interval training.
 
-## Build and deploy to device
+### Build and deploy to device
 - `npm run build`
 - open xcode, create empty `main.jsbundle` file in Workoutly dir
 - `npm run create-jsbundle` (make sure that it is present in Workoutly/ dir)

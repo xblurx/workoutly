@@ -1,3 +1,4 @@
+import { StatusBar } from 'expo-status-bar';
 import { Box } from 'native-base';
 import * as React from 'react';
 
@@ -6,7 +7,10 @@ type Props = {
 };
 
 export const Layout = ({ children }: Props) => (
-    <Box flex={1} w="full" bg="dark.50" pt={8}>
-        {children}
-    </Box>
+    <>
+        <StatusBar style="light" />
+        <Box flex={1} w="full" bg="dark.50" pt={8}>
+            {children}
+        </Box>
+    </>
 );

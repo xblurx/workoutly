@@ -1,4 +1,4 @@
-import { Flex, Text } from 'native-base';
+import { Center, Flex, HStack, Text } from 'native-base';
 import * as React from 'react';
 import { View } from 'moti';
 import { makeStyledComponent } from '../utils/styled';
@@ -35,6 +35,25 @@ export const AnimatedCard = ({ children }: { children: React.ReactNode }) => (
 );
 
 export const Card = ({ name, time, children }: CardProps) => (
+    <HStack w="360px" py={6} px={4} bg="dark.100" borderRadius="20">
+        <Center w="45%" alignItems="flex-start">
+            <Text numberOfLines={1} fontSize={18} fontWeight="medium">
+                {name}
+            </Text>
+        </Center>
+        <Center w="20%" alignItems="center">
+            {children}
+        </Center>
+        <Center w="35%" alignItems="flex-end">
+            <Text fontSize={18} fontWeight="medium">
+                {time}
+            </Text>
+        </Center>
+    </HStack>
+);
+
+const last = () => (
+
     <Flex
         w="360px"
         flexDirection="row"
@@ -53,4 +72,4 @@ export const Card = ({ name, time, children }: CardProps) => (
             {time}
         </Text>
     </Flex>
-);
+)

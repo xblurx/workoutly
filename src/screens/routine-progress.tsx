@@ -10,6 +10,7 @@ import { useRoutineProgress } from '../hooks/useRoutineProgress';
 import { Button } from 'react-native';
 import { Layout } from '../components/layout';
 import useSound from '../hooks/useSounds';
+import { useKeepAwake } from 'expo-keep-awake';
 
 type Props = {
     navigation: any;
@@ -37,6 +38,8 @@ const RoutineProgress = ({ navigation, route }: Props) => {
         setIsPaused(p => !p);
         togglePause();
     };
+
+    useKeepAwake()
 
     useEffect(() => {
         const play = async () => {
@@ -106,18 +109,22 @@ const RoutineProgress = ({ navigation, route }: Props) => {
                         </HStack>
 
                         {nextStep ? (
-                            <Pressable onPress={onPressNextStep}>
-                                <Box pt="100px" justifyContent="center">
+                            <Box pt="120px" justifyContent="center">
+                                <Text pb={4} numberOfLines={1} fontSize={18} fontWeight="medium">
+                                    Next Up
+                                </Text>
+                                <Pressable onPress={onPressNextStep}>
                                     <AnimatedCard>
                                         <Card
-                                            name={`Next Up: ${nextStep.name}`}
+                                            name={nextStep.name}
                                             time={formatSecondsToString(
                                                 nextStep.time
                                             )}
                                         />
                                     </AnimatedCard>
-                                </Box>
-                            </Pressable>
+                                </Pressable>
+                            </Box>
+
                         ) : undefined}
                     </>
                 )}

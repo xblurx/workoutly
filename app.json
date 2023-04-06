@@ -16,18 +16,13 @@
         ],
         "ios": {
             "supportsTablet": false,
-            "bundleIdentifier": "com.anonymous.Workoutly"
-        },
-        "android": {
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/adaptive-icon.png",
-                "backgroundColor": "#ffffff"
-            }
+            "bundleIdentifier": "com.anonymous.Workoutly",
         },
         "web": {
             "favicon": "./assets/favicon.png"
         },
         "platforms": ["ios"],
+        "orientation": "portrait",
         "extra": {
             "eas": {
                 "projectId": "aa6bb399-f3b5-4ad8-94a9-3ee49e6d55a0"

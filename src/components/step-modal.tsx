@@ -14,6 +14,7 @@ import { formatSecondsToString } from '../utils/time';
 import { CircleProgress } from './circle-progress';
 import { Step, useRoutinesStore } from '../store';
 import Animated, {
+    Easing,
     useAnimatedStyle,
     useSharedValue,
     withTiming,
@@ -48,7 +49,8 @@ export const StepModal = ({ isOpen, onClose, currentStep }: Props) => {
             transform: [
                 {
                     translateY: withTiming(translateYValue.value, {
-                        duration: 250,
+                        duration: 400,
+                        easing: Easing.bezier(0.2, 0.3, 0.3, 1),
                     }),
                 },
             ],
@@ -66,7 +68,7 @@ export const StepModal = ({ isOpen, onClose, currentStep }: Props) => {
     useEffect(() => {
         const showKeyboardEvent = Keyboard.addListener(
             'keyboardWillShow',
-            () => (translateYValue.value = -150)
+            () => (translateYValue.value = -120)
         );
         const hideKeyboardEvent = Keyboard.addListener(
             'keyboardWillHide',
@@ -86,7 +88,7 @@ export const StepModal = ({ isOpen, onClose, currentStep }: Props) => {
             testID={stepModalIds.modal}
         >
             <Animated.View style={[animatedStyle]}>
-                <Modal.Content maxWidth="400px">
+                <Modal.Content width="300px">
                     <Modal.Body>
                         <IconButton
                             variant="unstyled"

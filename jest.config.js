@@ -3,7 +3,7 @@ module.exports = {
     setupFiles: ['./node_modules/react-native-gesture-handler/jestSetup.js'],
     setupFilesAfterEnv: ['./jest-setup.js'],
     transformIgnorePatterns: [
-        'node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation|moti|nanoid|native-base|react-native-reanimated)',
+        'node_modules/(?!(jest-)?@?react-native|@react-native-community|@react-navigation|moti|nanoid|native-base|react-native-reanimated|expo-status-bar)',
     ],
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
     fakeTimers: {
